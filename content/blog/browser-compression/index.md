@@ -2,7 +2,7 @@
 title: Browser Compression
 publicId: "gatsby-portfolio/browser-compress-blog"
 date: "2020-08-27T07:26:03.284Z"
-description: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "
 categories: [hello world]
 comments: true
 image:

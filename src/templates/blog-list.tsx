@@ -80,10 +80,8 @@ const BlogIndex = ({
                   publicId={node.frontmatter.publicId}
                   height="320"
                   width="320"
-                  crop="fill"
-                  gravity="auto"
-                  border="2px_solid_rgb:3444c4"
-                  // background="rgb:c0ccd3"
+                  crop="fit"
+                  border="2px_solid_rgb:242424"
                 />
               </div>
             </section>
