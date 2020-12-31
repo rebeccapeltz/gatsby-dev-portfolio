@@ -1,15 +1,16 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { Image} from 'cloudinary-react'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   // const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+  // const { previous, next } = pageContext
 
   return (
     <Layout location={location} title="Home">
@@ -36,6 +37,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </header>
+        <Image cloudName="demo" publicId="sample" width="300" crop="scale" />
+
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -47,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
 
-      <nav>
+      {/* <nav>
         <ul
           style={{
             display: `flex`,
@@ -72,7 +75,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </Layout>
   )
 }

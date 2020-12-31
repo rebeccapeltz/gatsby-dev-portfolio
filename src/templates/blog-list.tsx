@@ -4,6 +4,7 @@ import { PageProps, Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { Image } from "cloudinary-react"
 
 type PageContext = {
   currentPage: number
@@ -21,6 +22,7 @@ type Data = {
         excerpt: string
         frontmatter: {
           title: string
+          publicId: string
           date: string
           description: string
         }
@@ -52,30 +54,43 @@ const BlogIndex = ({
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <article className="list" key={node.fields.slug}>
             <header>
               <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
+              // style={{
+              //   marginBottom: rhythm(1 / 4),
+              // }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              {/* <small>{node.frontmatter.date}</small> */}
             </header>
             <section>
               <p
+                className="desc"
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
+              <div>
+                <Image
+                  cloudName="pictures77"
+                  publicId={node.frontmatter.publicId}
+                  height="320"
+                  width="320"
+                  crop="fill"
+                  gravity="auto"
+                  border="2px_solid_rgb:3444c4"
+                  // background="rgb:c0ccd3"
+                />
+              </div>
             </section>
           </article>
         )
       })}
-
+      {/* 
       <nav>
         <ul
           style={{
@@ -101,7 +116,7 @@ const BlogIndex = ({
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </Layout>
   )
 }
@@ -109,17 +124,13 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query blogPageQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -129,6 +140,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            publicId
             description
           }
         }

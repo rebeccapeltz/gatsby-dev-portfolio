@@ -33,3 +33,12 @@ Check out your awesome blog at `http://localhost:8000` and Cheers!
 ## Legacy Jekyll theme
 
 This project was a Jekyll blog theme, which is archived and not maintained any more. You can still find the source code in [leonids-jekyll](https://github.com/renyuanz/leonids/tree/leonids-jekyll) branch.
+
+
+## Credits
+
+[Leonids Theme and Starter](https://github.com/renyuanz/leonids)
+
+
+fix header height on blog post
+add connect links

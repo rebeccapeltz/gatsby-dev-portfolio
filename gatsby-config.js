@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: "/leonids",
   siteMetadata: {
-    title: `Leonids`,
+    title: `Cloudinary Gatsby Portfolio`,
     author: {
-      name: `@ry_zou`,
+      name: `Cloudinary Instructional Design`,
       summary: `web dev`,
     },
     description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,

@@ -1,5 +1,6 @@
 ---
-title: "Sample Link Post"
+title: "Nuxt Interior Design Portfolio"
+publicId: "gatsby-portfolio/next-interior-design-portfolio"
 date: "2020-07-27T07:26:03.284Z"
 description: "Try click on the link icon."
 categories: [link post]
