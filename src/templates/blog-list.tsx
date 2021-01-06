@@ -75,14 +75,18 @@ const BlogIndex = ({
                 }}
               />
               <div>
-                <Image
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Image
                   cloudName="pictures77"
                   publicId={node.frontmatter.publicId}
                   height="320"
                   width="320"
                   crop="fit"
-                  border="2px_solid_rgb:242424"
+                  radius="5"
+                  border="1px_solid_rgb:242424"
                 />
+                </Link>
+                
               </div>
             </section>
           </article>

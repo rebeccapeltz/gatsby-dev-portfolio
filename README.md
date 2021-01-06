@@ -2,7 +2,9 @@
 
 This is created from a blog starter.  See Credits below.
 
+## Deploy to Netlify
 
+musing-snyder-6729c8
 
 ## Credits
 
@@ -11,3 +13,4 @@ This is created from a blog starter.  See Credits below.
 
 fix header height on blog post
 add connect links
+
